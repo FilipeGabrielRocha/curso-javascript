@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+    <main>
+        <section id="form">
+            <p>Ano de Nascimento: <input type="number" name="nascimento" id="inascimento"><br></p>
+
+            <p>Sexo: <input type="radio" name="sexo" id="imasculino" value="Homem"><label for="imasculino">Masculino</label>
+            
+            <input type="radio" name="sexo" id="ifeminino" value="Mulher"><label for="ifeminino">Feminino</label></p>
+
+            <input id="btn" type="submit" value="Verificar" onclick="calcularIdade()">
+        </section>
+        <section id="res">
+            <p>Preencha os dados acima para ver o resultado!</p>
+        </section>
+    </main>
+    <footer>
+        <p><small>&#169; Filipe Gabriel Rocha</small></p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
