@@ -13,16 +13,25 @@
     </header>
     <main>
         <section id="form">
-            <p>Ano de Nascimento: <input type="number" name="nascimento" id="inascimento"><br></p>
+            <p>Ano de Nascimento: 
+                <input type="number" name="nascimento" id="inascimento"><br>
+            </p>
 
-            <p>Sexo: <input type="radio" name="sexo" id="imasculino" value="Homem"><label for="imasculino">Masculino</label>
+            <p>Sexo: 
+                <input type="radio" name="radsex" id="mas" value="Homem" checked>
+                <label for="mas">Masculino</label>
             
-            <input type="radio" name="sexo" id="ifeminino" value="Mulher"><label for="ifeminino">Feminino</label></p>
+                <input type="radio" name="radsex" id="fem" value="Mulher">
+                <label for="fem">Feminino</label>
+            </p>
 
-            <input id="btn" type="submit" value="Verificar" onclick="calcularIdade()">
+            <p>
+                <input id="btn" type="submit" value="Verificar" onclick="calcularIdade()">
+            </p>
         </section>
         <section id="res">
             <p>Preencha os dados acima para ver o resultado!</p>
+            <img id="foto" src="" alt="">
         </section>
     </main>
     <footer>
