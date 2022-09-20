@@ -9,18 +9,26 @@ function contar() {
     var fim = Number(txtFim.value)
     var passo = Number(txtPasso.value)
 
-    res.innerHTML = 'Contando:'
+    res.innerHTML = 'Contando:<br>'
 
-    if (txtInicio.value.length == 0 || txtFim.value.length == 0) {
+    if (txtInicio.value.length == 0 || txtFim.value.length == 0 || txtPasso.value.length == 0) {
         res.innerHTML = 'Impossível contar!'
-    } else if (txtPasso.value.length == 0) {
+    } else if (passo == 0) {
         window.alert('Passo inválido! Considerando PASSO 1')
         passo = 1
         // WHILE
-        while (inicio <= fim) {
-            res.innerHTML += `${inicio}&#x1F449; `
-            inicio += passo
+        if (inicio >= fim) {
+            while (inicio >= fim) {
+                res.innerHTML += `${inicio}&#x1F449; `
+                inicio -= passo
+            }
+        } else {
+            while (inicio <= fim) {
+                res.innerHTML += `${inicio}&#x1F449; `
+                inicio += passo
+            }
         }
+        res.innerHTML += '&#x1F3C1;'
 
         // DO WHILE
         // do {
@@ -32,14 +40,20 @@ function contar() {
         // for (inicio; inicio <= fim; inicio += passo) {
         //     res.innerHTML += `${inicio}&#x1F449; `
         // }
-
-        res.innerHTML += '&#x1F3C1;'
     } else {
         // WHILE
-        while (inicio <= fim) {
-            res.innerHTML += `${inicio}&#x1F449; `
-            inicio += passo
+        if (inicio >= fim) {
+            while (inicio >= fim) {
+                res.innerHTML += `${inicio}&#x1F449; `
+                inicio -= passo
+            }
+        } else {
+            while (inicio <= fim) {
+                res.innerHTML += `${inicio}&#x1F449; `
+                inicio += passo
+            }
         }
+        res.innerHTML += '&#x1F3C1;'
 
         // DO WHILE
         // do {
@@ -51,6 +65,5 @@ function contar() {
         // for (inicio; inicio <= fim; inicio += passo) {
         //     res.innerHTML += `${inicio}&#x1F449; `
         // }
-        res.innerHTML += '&#x1F3C1;'
     }
 }
