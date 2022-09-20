@@ -9,7 +9,7 @@ function gerarTabuada() {
         cont = 1
         while (cont <= 10) {
             var mult = cont * num
-            itabuada.innerHTML += `${num} x ${cont} = ${mult} `
+            itabuada.innerHTML += `${num} x ${cont} = ${mult} \n`
             cont += 1
         }
     }
