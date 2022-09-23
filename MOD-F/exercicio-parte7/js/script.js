@@ -24,11 +24,13 @@ function adicionar() {
         valores.push(Number(num.value))
         let item = document.createElement('option')
         item.text += `Valor ${num.value} adicionado.`
-        ilistanum.appendChild(item)
+        lista.appendChild(item)
+        res.innerHTML = ''
     } else {
         alert('[ERRO] Número inválido ou já existente')
     }
-    res.innerHTML = ''
+    num.value = ''
+    num.focus()
 }
 
 function somar(lista) {
@@ -39,25 +41,17 @@ function somar(lista) {
     return total
 }
 
-function media(tamanho, lista) {
-    let total = 0
-    for (let pos in lista) {
-        total += lista[pos]
-    }
-    media = total / tamanho
-    return media
-}
-
 function finalizar() {
-    if (valores.length > 0) {
+    if (valores.length == 0) {
+        alert('Adicione valores antes de finalizar!')
+    } else {
         let tamanho = valores.length
-        res.innerHTML = `<p>Ao todo, temos ${tamanho} números cadastrados.</p>`
-        valores.sort()
+        media = somar(valores) / tamanho
+        res.innerHTML = ''
+        res.innerHTML += `<p>Ao todo, temos ${tamanho} números cadastrados.</p>`
         res.innerHTML += `<p>O maior valor informado foi ${valores[Number(tamanho-1)]}.</p>`
         res.innerHTML += `<p>O menor valor informado foi ${valores[0]}.</p>`
         res.innerHTML += `<p>Somando todos os valores, temos ${Number(somar(valores))}.</p>`
-        res.innerHTML += `<p>A média dos valores digitados é ${Number(media(tamanho, valores))}.</p>`
-    } else {
-        res.innerHTML = 'Nada foi adicionado'
+        res.innerHTML += `<p>A média dos valores digitados é ${media}.</p>`
     }
 }
